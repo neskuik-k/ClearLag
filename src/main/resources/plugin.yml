@@ -1,0 +1,5 @@
+name: SkyMC-ClearLag
+version: 1.0
+description: ClearLag made for Neskuik_ as SkyMC server
+author: Neskuik_
+main: fr.neskuik.clearlag.ClearLag
