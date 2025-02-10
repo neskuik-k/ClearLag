@@ -22,6 +22,8 @@ dependencies {
     compileOnly("io.papermc.paper:paper-api:1.20.4-R0.1-SNAPSHOT")
     implementation("com.google.code.gson:gson:2.8.8")
     implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
+
+    implementation(files("libs/placeholderapi-2.11.6.jar"))
 }
 
 tasks {
