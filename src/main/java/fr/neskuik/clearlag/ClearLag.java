@@ -14,6 +14,7 @@ public class ClearLag extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        // Ensure the plugin's data folder exists
         if (!getDataFolder().exists()) {
             getDataFolder().mkdirs();
         }
@@ -26,7 +27,13 @@ public class ClearLag extends JavaPlugin {
         new ClearLagTask(this).runTaskTimer(this, 0, 20L * 60 * getConfig().getInt("clearing-time", 10));
 
         if (Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null) {
-            new ClearLagExpansion(this).register();
+            if (new ClearLagExpansion(this).register()) {
+                getLogger().info("PlaceholderAPI expansion registered successfully.");
+            } else {
+                getLogger().warning("Failed to register PlaceholderAPI expansion.");
+            }
+        } else {
+            getLogger().warning("PlaceholderAPI not found. Placeholders will not be available.");
         }
 
         System.out.println(ChatColor.WHITE + "--------------------------");
