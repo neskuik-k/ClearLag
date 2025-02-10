@@ -8,10 +8,16 @@ import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import java.io.File;
+
 public class ClearLag extends JavaPlugin {
 
     @Override
     public void onEnable() {
+        if (!getDataFolder().exists()) {
+            getDataFolder().mkdirs();
+        }
+
         saveDefaultConfig();
 
         PaperCommandManager manager = new PaperCommandManager(this);
