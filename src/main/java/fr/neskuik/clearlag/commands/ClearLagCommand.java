@@ -22,8 +22,8 @@ public class ClearLagCommand extends BaseCommand {
     @Default("clearlag")
     public void onClearLag(CommandSender sender) {
         int removed = EntityUtils.clearEntities(plugin);
-        sender.sendMessage("§6§lSKYMC §f§l• §7Suppression de " + removed + " entités §aeffectué(e)§7 !");
-        Bukkit.broadcastMessage("§7[§6⚠§7] §fSuppresion des items au sol effectué.");
+        sender.sendMessage("§6§lSKYMC §f§l• §7Suppression de " + removed + " entités §aeffectuée§7 !");
+        Bukkit.broadcastMessage("§7[§6⚠§7] §fSuppression des items au sol effectuée.");
     }
 
     @Subcommand("reload")

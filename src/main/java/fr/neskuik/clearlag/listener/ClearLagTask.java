@@ -22,12 +22,11 @@ public class ClearLagTask extends BukkitRunnable {
             }
         }.runTaskLater(plugin, 20L * 60 * (clearingTime - warningTime));
 
-        // Schedule the actual entity clearing task
         new BukkitRunnable() {
             @Override
             public void run() {
                 int removed = EntityUtils.clearEntities(plugin);
-                plugin.getServer().broadcastMessage("§7[§6⚠§7] §fSuppresion des items au sol effectué.");
+                plugin.getServer().broadcastMessage("§7[§6⚠§7] §fSuppression des items au sol effectuée.");
             }
         }.runTaskLater(plugin, 20L * 60 * clearingTime);
     }
